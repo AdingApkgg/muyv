@@ -53,13 +53,14 @@ body {
     height: 160px;
     right: 40%;
     position: absolute;
-    z-index: 999;
+    z-index: -1;
 }
 
 #gongDePlusText {
     animation: textPopUp .5s;
     position: relative;
     bottom: 1px;
+    z-index: 999;
 }
 
 #btnChangeAudio {
