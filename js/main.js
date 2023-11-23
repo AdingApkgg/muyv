@@ -71,6 +71,7 @@ function autoClick() {
     alert("已禁用自动敲击");
   }
 }
+
 muyvImg.addEventListener("click", muyvAudioFunction);
 
 document.addEventListener("keydown", function (event) {
