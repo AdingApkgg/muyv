@@ -3,7 +3,12 @@
     padding: 0;
 }
 
-body {
+body[data-theme=light] {
+    background: #ffffff;
+    color: #000000;
+}
+
+body[data-theme=dark] {
     background: #000000;
     color: #ffffff;
 }

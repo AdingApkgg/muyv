@@ -83,3 +83,13 @@ document.addEventListener("keydown", function (event) {
     muyvAudioFunction();
   }
 });
+
+function lightOrDarkModel() {
+  if (document.body.getAttribute("data-theme") == "light") {
+    document.body.removeAttribute("data-theme", "light");
+    document.body.setAttribute("data-theme", "dark");
+  } else if (document.body.getAttribute("data-theme") == "dark") {
+    document.body.removeAttribute("data-theme", "dark");
+    document.body.setAttribute("data-theme", "light");
+  }
+}
