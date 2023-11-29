@@ -46,11 +46,11 @@ body[data-theme=dark] {
 }
 
 #muyvImg:hover {
-    transform: scale(0.99);
+    transform: scale(0.999999);
 }
 
 #muyvImg:active {
-    transform: scale(1);
+    transform: scale(1.01);
 }
 
 #gongDePlus {
@@ -85,13 +85,14 @@ body[data-theme=dark] {
 }
 
 .giscus-frame {
-    background: rgba(51, 51, 51, .3);
+    background: rgba(255, 255, 255, .3);
     width: 70%;
     margin: 15px auto;
-    border: rgb(90, 90, 90) 3px solid;
+    border: rgb(218, 218, 218) 3px solid;
     border-radius: 6px;
     padding: 15px;
     box-shadow: rgba(51, 51, 51, 0.3) 0 0 20px 5px;
+    color: #ffffff;
 }
 
 @media(max-width:700px) {

@@ -84,12 +84,24 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+var giscusComments = document.getElementById("giscusComments");
+console.log(giscusComments.getAttribute("data-theme"));
+
 function lightOrDarkModel() {
   if (document.body.getAttribute("data-theme") == "light") {
     document.body.removeAttribute("data-theme", "light");
     document.body.setAttribute("data-theme", "dark");
+    muyvImg.removeAttribute("style", "filter: invert(100%);");
+    muyvImg.setAttribute("style", "filter: invert(0%);");
+    giscusComments.removeAttribute("data-theme", "https://giscus.app/themes/light.css");
+    giscusComments.setAttribute("data-theme", "https://giscus.app/themes/dark.css");
   } else if (document.body.getAttribute("data-theme") == "dark") {
     document.body.removeAttribute("data-theme", "dark");
     document.body.setAttribute("data-theme", "light");
+    muyvImg.removeAttribute("style", "filter: invert(0%);");
+    muyvImg.setAttribute("style", "filter: invert(100%);");
+    giscusComments.removeAttribute("data-theme", "https://giscus.app/themes/dark.css");
+    giscusComments.setAttribute("data-theme", "https://giscus.app/themes/light.css");
   }
+  console.log(giscusComments.getAttribute("data-theme"));
 }
