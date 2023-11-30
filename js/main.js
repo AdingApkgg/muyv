@@ -84,8 +84,8 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-var giscusComments = document.getElementById("giscusComments");
-console.log(giscusComments.getAttribute("data-theme"));
+const lightOrDarkModelBtn = document.getElementById("lightOrDarkModelBtn");
+const lightOrDarkIcon = document.getElementById("lightOrDarkIcon");
 
 function lightOrDarkModel() {
   if (document.body.getAttribute("data-theme") == "light") {
@@ -93,15 +93,28 @@ function lightOrDarkModel() {
     document.body.setAttribute("data-theme", "dark");
     muyvImg.removeAttribute("style", "filter: invert(100%);");
     muyvImg.setAttribute("style", "filter: invert(0%);");
-    giscusComments.removeAttribute("data-theme", "https://giscus.app/themes/light.css");
-    giscusComments.setAttribute("data-theme", "https://giscus.app/themes/dark.css");
+    lightOrDarkIcon.className = "fa fa-moon-o";
   } else if (document.body.getAttribute("data-theme") == "dark") {
     document.body.removeAttribute("data-theme", "dark");
     document.body.setAttribute("data-theme", "light");
     muyvImg.removeAttribute("style", "filter: invert(0%);");
     muyvImg.setAttribute("style", "filter: invert(100%);");
-    giscusComments.removeAttribute("data-theme", "https://giscus.app/themes/dark.css");
-    giscusComments.setAttribute("data-theme", "https://giscus.app/themes/light.css");
+    lightOrDarkIcon.className = "fa fa-sun-o";
   }
-  console.log(giscusComments.getAttribute("data-theme"));
+}
+
+lightOrDarkModelBtn.addEventListener("click", lightOrDarkModel);
+var settingsBoxDisplayTemp = 0;
+function settingsBoxDisplay() {
+  var settingsBox = document.getElementById("settingsBox");
+  var divMask = document.getElementById("mask");
+  if (settingsBoxDisplayTemp == 0) {
+    settingsBox.style.cssText = "display: block;";
+    divMask.style.cssText = "display: block;";
+    settingsBoxDisplayTemp = 1;
+  } else if (settingsBoxDisplayTemp == 1) {
+    settingsBox.style.cssText = "display: none;";
+    divMask.style.cssText = "display: none;";
+    settingsBoxDisplayTemp = 0;
+  }
 }
