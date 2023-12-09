@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    transition: all .3s ease-in-out;
 }
 
 /* 鸿蒙字体引入 */
@@ -532,8 +533,11 @@
     unicode-range: U+21-7e, U+a4, U+a7-a8, U+b0-b1, U+b7;
 }
 
-body[data-theme=light] {
+body {
     font-family: HarmonyOS_Regular !important;
+}
+
+body[data-theme=light] {
     background: #ffffff;
     color: #000000;
 
@@ -545,18 +549,18 @@ body[data-theme=dark] {
 }
 
 a {
+    color: var(--font-color);
     text-decoration: none;
-    color: rgba(255, 255, 255, 1);
-    transition: 0.3s;
+    transition: .3s;
 }
 
 a:hover {
     text-decoration: underline;
-    color: var(--font-color);
+    opacity: .7;
 }
 
 a:active {
-    color: rgba(255, 255, 255, .7);
+    opacity: .9;
 }
 
 #headerTag {
@@ -645,7 +649,7 @@ a:active {
 }
 
 #muyvImg:hover {
-    transform: scale(0.999999);
+    transform: scale(.999999);
 }
 
 #muyvImg:active {
@@ -667,6 +671,18 @@ a:active {
 #btnChangeAudio {
     width: 200px;
     height: 80px;
+    border: var(--bg-theme) 3px solid;
+    border-radius: 16px;
+}
+
+#btnChangeAudio:hover {
+    border: var(--bg-theme) 1px solid;
+    border-radius: 12px;
+}
+
+#btnChangeAudio:active {
+    border: var(--bg-theme) 2px solid;
+    border-radius: 14px;
 }
 
 #footerTag {
@@ -685,12 +701,11 @@ a:active {
 
 .giscus-frame {
     background: rgba(255, 255, 255, .8);
-    /* width: 100%; */
     margin: 15px auto;
     border: rgb(218, 218, 218) 3px solid;
     border-radius: 6px;
     padding: 15px;
-    box-shadow: rgba(51, 51, 51, 0.3) 0 0 20px 5px;
+    box-shadow: rgba(51, 51, 51, .3) 0 0 20px 5px;
 }
 
 #settingsBox {
@@ -707,7 +722,7 @@ a:active {
     background: rgba(250, 250, 250, .7);
     z-index: 100;
     max-height: 90vh;
-    overflow: scroll;
+    overflow: hidden auto;
 }
 
 #settingsBox header {
@@ -723,7 +738,7 @@ a:active {
     bottom: 1;
     left: 1;
     background: var(--bg-theme);
-    border: rgba(51, 51, 51, 0.2) 2px solid;
+    border: rgba(51, 51, 51, .2) 2px solid;
     box-shadow: rgba(0, 0, 0, .1) 0 0 5px 2px;
     width: 26px;
     height: 26px;
@@ -758,7 +773,7 @@ a:active {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, .7);
     z-index: 99;
 }
 
@@ -807,7 +822,7 @@ a:active {
         margin: 0 auto;
         border: rgb(90, 90, 90) 2px solid;
         border-radius: 4px;
-        box-shadow: rgba(51, 51, 51, 0.3) 0 0 10px 3px;
+        box-shadow: rgba(51, 51, 51, .3) 0 0 10px 3px;
     }
 
     #settingsBox {
