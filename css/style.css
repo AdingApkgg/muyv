@@ -601,6 +601,14 @@ a:active {
 }
 
 #lightOrDarkModelBtn:hover {
+    transform: rotate(-360deg);
+}
+
+#lightOrDarkModelBtn:active {
+    transform: rotate(0deg);
+}
+
+#lightOrDarkModelBtn:hover {
     background: rgba(255, 255, 255, 1);
 }
 
@@ -625,10 +633,12 @@ a:active {
 
 #settingsBtn:hover {
     background: rgba(255, 255, 255, 1);
+    transform: rotate(-360deg);
 }
 
 #settingsBtn:active {
     background: rgba(255, 255, 255, .9);
+    transform: rotate(0deg);
 }
 
 #mainTag {

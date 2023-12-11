@@ -17,8 +17,8 @@
     <header id="headerTag">
         <h2>电子木鱼</h2>
         <p>敲电子木鱼，见机械佛祖，得赛博真经</p>
-        <nav class="navList"><button type="button" id="lightOrDarkModelBtn" title="昼夜模式"><i class="fa fa-moon-o"
-                    id="lightOrDarkIcon"></i></button>
+        <nav class="navList"><button type="button" id="lightOrDarkModelBtn" title="昼夜模式" onclick="lightOrDarkModel()"><i
+                    class="fa fa-moon-o" id="lightOrDarkIcon"></i></button>
             <button type="button" id="settingsBtn" title="更多设置" onclick="settingsBoxDisplay()"><i class="fa fa-gear"
                     id="settingsIcon"></i></button>
         </nav>
@@ -28,7 +28,7 @@
             <p>功德</p>
             <p>-=&nbsp;<span id="spanTag">0</span>&nbsp;=-</p>
             <div id="gongDePlus"></div>
-            <img id="muyvImg" src="img/muyv.webp" alt="木鱼">
+            <img id="muyvImg" src="img/muyv.webp" alt="木鱼" onclick="muyvAudioFunction()">
         </section>
     </main>
     <div id="settingsBox"><span id="settingsBoxExitIcon" onclick="settingsBoxDisplay()"><i
@@ -71,7 +71,7 @@
         </div>
     </footer>
     <div id="mask"></div>
-    <script defer src="./js/main.js"></script>
+    <script async src="./js/main.js"></script>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 

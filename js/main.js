@@ -69,8 +69,6 @@ function autoClick() {
   }
 }
 
-muyvImg.addEventListener("click", muyvAudioFunction);
-
 document.addEventListener("keydown", function (event) {
   if (
     event.code === "Enter" ||
@@ -100,7 +98,6 @@ function lightOrDarkModel() {
   }
 }
 
-lightOrDarkModelBtn.addEventListener("click", lightOrDarkModel);
 var settingsBoxDisplayTemp = 0;
 function settingsBoxDisplay() {
   var settingsBox = document.getElementById("settingsBox");
