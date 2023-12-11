@@ -18,7 +18,7 @@ function muyvAudioFunction() {
   var muyvAudioVar = new Audio(muyvAudio.src);
   muyvAudioVar.play();
   muyvNumSpan.innerText++;
-  document.cookie = "muyvNumSpan=" + muyvNumSpan.innerText;
+  document.cookie = "muyvNumSpan=" + muyvNumSpan.innerText + "; max-age=604800";
   gongDePlus.innerHTML += "<p id='gongDePlusText'>功德+1</p>";
   setTimeout(function () {
     gongDePlus.innerHTML = "";
