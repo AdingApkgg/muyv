@@ -120,3 +120,11 @@ function settingsBoxDisplay() {
     settingsBoxDisplayTemp = 0;
   }
 }
+
+function gongDePlusCheating(gongDePlusCheatingNum) {
+  if (gongDePlusCheatingNum > 0) {
+    muyvNumSpan.innerText = gongDePlusCheatingNum;
+  } else {
+    muyvNumSpan.innerText++;
+  }
+}
