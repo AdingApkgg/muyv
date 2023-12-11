@@ -129,4 +129,5 @@ function gongDePlusCheating(gongDePlusCheatingNum) {
   } else {
     muyvNumSpan.innerText.innerText++;
   }
+  document.cookie = "muyvNumSpan=" + muyvNumSpan.innerText;
 }
