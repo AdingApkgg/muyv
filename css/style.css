@@ -837,7 +837,7 @@ a:active {
 
     #settingsBox {
         width: 95%;
-        top: 10px;
+        top: 5vh;
         border: rgba(218, 218, 218, .7) solid 3px;
         border-radius: 8px;
         padding: 5px;
