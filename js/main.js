@@ -52,12 +52,14 @@ function changeAudio(changeAudioNum) {
   var muyvAudioVar = new Audio(muyvAudio.src);
   muyvAudioVar.play();
   muyvNumSpan.innerText -= 20;
+  document.cookie = "muyvNumSpan=" + muyvNumSpan.innerText;
 }
 
 function GautamaLaugh() {
   var GautamaLaughAudioVar = new Audio(GautamaLaughAudio);
   GautamaLaughAudioVar.play();
   muyvNumSpan.innerText -= 60;
+  document.cookie = "muyvNumSpan=" + muyvNumSpan.innerText;
 }
 
 var autoTimerClick;
@@ -125,6 +127,6 @@ function gongDePlusCheating(gongDePlusCheatingNum) {
   if (gongDePlusCheatingNum > 0) {
     muyvNumSpan.innerText = gongDePlusCheatingNum;
   } else {
-    muyvNumSpan.innerText++;
+    muyvNumSpan.innerText.innerText++;
   }
 }
