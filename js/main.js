@@ -1,31 +1,64 @@
 var muyvImg = document.getElementById("muyvImg");
 var muyvNumSpan = document.getElementById("spanTag");
-var gongDePlus = document.getElementById("gongDePlus");
 var muyvAudio = new Audio();
 var muyvAudioSrcTemp = 0;
+var gongDeSum = parseInt(muyvNumSpan.innerText);
+var gongDeSumUp = 1;
+var gongDeSumUpTemp = 0;
 muyvAudio.src = muyvAudio02;
 var myCookie = document.cookie.replace(
   /(?:(?:^|.*;\s*)muyvNumSpan\s*\=\s*([^;]*).*$)|^.*$/,
   "$1"
 );
 if (myCookie > 0) {
-  muyvNumSpan.innerText = myCookie;
+  gongDeSum = parseInt(myCookie);
+  muyvNumSpan.innerText = gongDeSum;
 } else {
-  muyvNumSpan.innerText = 0;
+  gongDeSum = 0;
+  muyvNumSpan.innerText = gongDeSum;
+}
+
+function gongDeSumUpPlus() {
+  gongDeSumUpTemp += parseInt(gongDeSumUp);
+  if (gongDeSumUpTemp == 20) {
+    gongDeSumUp = 20;
+  } else if (gongDeSumUpTemp > 20) {
+    gongDeSumUp = 1;
+    gongDeSumUpTemp = 0;
+  }
 }
 
 function muyvAudioFunction() {
   var muyvAudioVar = new Audio(muyvAudio.src);
   muyvAudioVar.play();
-  muyvNumSpan.innerText++;
+  gongDeSum += gongDeSumUp;
+  muyvNumSpan.innerText = gongDeSum;
+  gongDeSumUpPlus();
   document.cookie =
-    "muyvNumSpan=" + muyvNumSpan.innerText + "; max-age=315360000";
-  gongDePlus.innerHTML += "<p id='gongDePlusText'>功德+1</p>";
-  setTimeout(function () {
-    gongDePlus.innerHTML = "";
-  }, 1500);
+    "muyvNumSpan=" + gongDeSum + "; max-age=315360000";
+  const text = document.createElement("div");
+  text.textContent = "功德+" + gongDeSumUp;
+  text.classList.add("floating-text");
+  text.style.left = (event.clientX - 20) + "px";
+  text.style.top = (event.clientY - 30) + "px";
+  document.body.appendChild(text);
+  const animation = text.animate(
+    [{
+        opacity: 1,
+        top: text.offsetTop + "px",
+      },
+      {
+        opacity: 0,
+        top: text.offsetTop - 160 + "px",
+      },
+    ], {
+      duration: 800,
+    }
+  );
+  animation.onfinish = () => {
+    text.remove();
+  };
 }
-
 var muyvAudioFunctionSetInterval;
 
 function srartMuyvAudioFunctionSetInterval() {
@@ -52,17 +85,18 @@ function changeAudio(changeAudioNum) {
   }
   var muyvAudioVar = new Audio(muyvAudio.src);
   muyvAudioVar.play();
-  muyvNumSpan.innerText -= 20;
-  document.cookie = "muyvNumSpan=" + muyvNumSpan.innerText;
+  gongDeSum -= 20;
+  document.cookie = "muyvNumSpan=" + gongDeSum;
+  muyvNumSpan.innerText = gongDeSum;
 }
 
 function GautamaLaugh() {
   var GautamaLaughAudioVar = new Audio(GautamaLaughAudio);
   GautamaLaughAudioVar.play();
-  muyvNumSpan.innerText -= 60;
-  document.cookie = "muyvNumSpan=" + muyvNumSpan.innerText;
+  gongDeSum -= 60;
+  document.cookie = "muyvNumSpan=" + gongDeSum;
+  muyvNumSpan.innerText = gongDeSum;
 }
-
 var autoTimerClick;
 var autoTimerClickTemp = false;
 
@@ -79,7 +113,6 @@ function autoClick() {
     alert("已禁用自动敲击");
   }
 }
-
 document.addEventListener("keydown", function (event) {
   if (
     event.code === "Enter" ||
@@ -89,7 +122,6 @@ document.addEventListener("keydown", function (event) {
     muyvAudioFunction();
   }
 });
-
 const lightOrDarkModelBtn = document.getElementById("lightOrDarkModelBtn");
 const lightOrDarkIcon = document.getElementById("lightOrDarkIcon");
 
@@ -108,8 +140,8 @@ function lightOrDarkModel() {
     lightOrDarkIcon.className = "fa fa-sun-o";
   }
 }
-
 var settingsBoxDisplayTemp = 0;
+
 function settingsBoxDisplay() {
   var settingsBox = document.getElementById("settingsBox");
   var divMask = document.getElementById("mask");
@@ -122,13 +154,4 @@ function settingsBoxDisplay() {
     divMask.style.cssText = "display: none;";
     settingsBoxDisplayTemp = 0;
   }
-}
-
-function gongDePlusCheating(gongDePlusCheatingNum) {
-  if (gongDePlusCheatingNum > 0) {
-    muyvNumSpan.innerText = gongDePlusCheatingNum;
-  } else {
-    muyvNumSpan.innerText.innerText++;
-  }
-  document.cookie = "muyvNumSpan=" + muyvNumSpan.innerText;
 }
