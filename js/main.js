@@ -34,16 +34,16 @@ function muyvAudioFunction() {
   gongDeSum += gongDeSumUp;
   muyvNumSpan.innerText = gongDeSum;
   gongDeSumUpPlus();
-  document.cookie =
-    "muyvNumSpan=" + gongDeSum + "; max-age=315360000";
+  document.cookie = "muyvNumSpan=" + gongDeSum + "; max-age=315360000";
   const text = document.createElement("div");
   text.textContent = "功德+" + gongDeSumUp;
   text.classList.add("floating-text");
-  text.style.left = (event.clientX - 20) + "px";
-  text.style.top = (event.clientY - 30) + "px";
+  text.style.left = event.clientX - 20 + "px";
+  text.style.top = event.clientY - 30 + "px";
   document.body.appendChild(text);
   const animation = text.animate(
-    [{
+    [
+      {
         opacity: 1,
         top: text.offsetTop + "px",
       },
@@ -51,7 +51,8 @@ function muyvAudioFunction() {
         opacity: 0,
         top: text.offsetTop - 160 + "px",
       },
-    ], {
+    ],
+    {
       duration: 800,
     }
   );
@@ -78,6 +79,10 @@ function changeAudio(changeAudioNum) {
     case 3:
       muyvAudio.src = ikunAudio01;
       alert("已切换至珍癌粉音效");
+      break;
+    case 4:
+      muyvAudio.src = cialloAudio01;
+      alert("Ciallo～(∠·ω< )⌒★");
       break;
     default:
       alert("音效切换错误，请刷新重试");
