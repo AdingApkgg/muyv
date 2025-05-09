@@ -1,145 +1,101 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>电子木鱼</title>
-    <meta
-      name="keywords"
-      content="电子木鱼,自动功德机,机甲佛祖,赛博真经,功德+1"
-    />
-    <meta
-      name="description"
-      content="敲电子木鱼，使用自动功德机，见机甲佛祖，修赛博真经。无需登录即可每日敲木鱼，每敲一下功德+1，心中的焦虑似乎也减少了呢。"
-    />
-    <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://registry.npmmirror.com/font-awesome/4.7.0/files/css/font-awesome.min.css"
-    />
-  </head>
+<html lang="zh">
 
-  <body data-theme="dark">
-    <header id="headerTag">
-      <h2>电子木鱼</h2>
-      <p>敲电子木鱼，见机械佛祖，得赛博真经</p>
-      <nav class="navList">
-        <button
-          type="button"
-          id="lightOrDarkModelBtn"
-          title="昼夜模式"
-          onclick="lightOrDarkModel()"
-        >
-          <i class="fa fa-moon-o" id="lightOrDarkIcon"></i>
-        </button>
-        <button
-          type="button"
-          id="settingsBtn"
-          title="更多设置"
-          onclick="settingsBoxDisplay()"
-        >
-          <i class="fa fa-gear" id="settingsIcon"></i>
-        </button>
-      </nav>
-    </header>
-    <main id="mainTag">
-      <section id="muyvSection">
-        <p>功德</p>
-        <p>-=&nbsp;<span id="spanTag">0</span>&nbsp;=-</p>
-        <div id="gongDePlus"></div>
-        <img
-          id="muyvImg"
-          src="img/muyv.webp"
-          alt="木鱼"
-          onclick="muyvAudioFunction()"
-        />
-      </section>
-    </main>
-    <div id="settingsBox">
-      <span id="settingsBoxExitIcon" onclick="settingsBoxDisplay()"
-        ><i class="fa fa-close"></i
-      ></span>
-      <h2>设置</h2>
-      <p>在此设置独属于你的木鱼</p>
-      <hr />
-      <h3>常用</h3>
-      <button type="button" id="btnChangeAudio" onclick="GautamaLaugh()">
-        佛祖陪你笑
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>电子木鱼</title>
+  <meta name="keywords" content="电子木鱼,自动功德机,机甲佛祖,赛博真经,功德+1" />
+  <meta name="description" content="敲电子木鱼，使用自动功德机，见机甲佛祖，修赛博真经。无需登录即可每日敲木鱼，每敲一下功德+1，心中的焦虑似乎也减少了呢。" />
+  <meta property="og:title" content="电子木鱼">
+  <meta property="og:description" content="敲电子木鱼，使用自动功德机，见机甲佛祖，修赛博真经。无需登录即可每日敲木鱼，每敲一下功德+1，心中的焦虑似乎也减少了呢。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muyv.saop.cc/">
+  <meta property="og:image" content="https://muyv.saop.cc/favicon.ico">
+  <meta property="og:site_name" content="电子木鱼">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="./css/style.css" importance="high" />
+  <link rel="stylesheet" href="https://registry.npmmirror.com/font-awesome/4.7.0/files/css/font-awesome.min.css"
+    importance="high" />
+</head>
+
+<body data-theme="dark">
+  <header id="headerTag">
+    <h2>电子木鱼</h2>
+    <p>敲电子木鱼，见机械佛祖，得赛博真经</p>
+    <nav class="navList">
+      <button type="button" id="lightOrDarkModelBtn" title="昼夜模式" onclick="lightOrDarkModel()">
+        <i class="fa fa-moon-o" id="lightOrDarkIcon"></i>
       </button>
-      <button type="button" id="btnChangeAudio" onclick="autoClick()">
-        自动积功德
+      <button type="button" id="settingsBtn" title="更多设置" onclick="settingsBoxDisplay()">
+        <i class="fa fa-gear" id="settingsIcon"></i>
       </button>
-      <hr />
-      <h3>木鱼音效（-20功德）</h3>
-      <button type="button" id="btnChangeAudio" onclick="changeAudio(1)">
-        浓厚
-      </button>
-      <button type="button" id="btnChangeAudio" onclick="changeAudio(2)">
-        清脆
-      </button>
-      <button type="button" id="btnChangeAudio" onclick="changeAudio(3)">
-        坤音
-      </button>
-      <button type="button" id="btnChangeAudio" onclick="changeAudio(4)">
-        Ciallo～(∠·ω< )⌒★
-      </button>
-      <hr />
-      <h3>背景音乐</h3>
-      <audio
-        src="https://music.163.com/song/media/outer/url?id=1373604201.mp3"
-        controls
-        preload="metadata"
-        loop
-      ></audio>
-      <audio
-        src="https://music.163.com/song/media/outer/url?id=1807844939.mp3"
-        controls
-        preload="metadata"
-        loop
-      ></audio>
-      <audio
-        src="https://music.163.com/song/media/outer/url?id=1340439829.mp3"
-        controls
-        preload="metadata"
-        loop
-      ></audio>
-      <audio
-        src="https://music.163.com/song/media/outer/url?id=1827001911.mp3"
-        controls
-        preload="metadata"
-        loop
-      ></audio>
-      <audio
-        src="https://music.163.com/song/media/outer/url?id=34324540.mp3"
-        controls
-        preload="metadata"
-        loop
-      ></audio>
+    </nav>
+  </header>
+  <main id="mainTag">
+    <section id="muyvSection">
+      <p>功德</p>
+      <p>-=&nbsp;<span id="spanTag">0</span>&nbsp;=-</p>
+      <div id="gongDePlus"></div>
+      <img id="muyvImg" src="img/muyv.avif" alt="木鱼" onclick="muyvAudioFunction()" />
+    </section>
+  </main>
+  <div id="settingsBox">
+    <span id="settingsBoxExitIcon" onclick="settingsBoxDisplay()"><i class="fa fa-close"></i></span>
+    <h2>设置</h2>
+    <p>在此设置独属于你的木鱼</p>
+    <hr />
+    <h3>常用</h3>
+    <button type="button" id="btnChangeAudio" onclick="GautamaLaugh()">
+      佛祖陪你笑
+    </button>
+    <button type="button" id="btnChangeAudio" onclick="autoClick()">
+      自动积功德
+    </button>
+    <hr />
+    <h3>木鱼音效（-20功德）</h3>
+    <button type="button" id="btnChangeAudio" onclick="changeAudio(1)">
+      浓厚
+    </button>
+    <button type="button" id="btnChangeAudio" onclick="changeAudio(2)">
+      清脆
+    </button>
+    <button type="button" id="btnChangeAudio" onclick="changeAudio(3)">
+      坤音
+    </button>
+    <button type="button" id="btnChangeAudio" onclick="changeAudio(4)">
+      Ciallo～(∠·ω< )⌒★ </button>
+        <hr />
+        <h3>背景音乐</h3>
+        <audio src="https://music.163.com/song/media/outer/url?id=1373604201.mp3" controls preload="metadata"
+          loop></audio>
+        <audio src="https://music.163.com/song/media/outer/url?id=1807844939.mp3" controls preload="metadata"
+          loop></audio>
+        <audio
+          src="https://sharefs.tx.kugou.com/202505100321/7308e8e33252595c4cccd938b63ebeb7/v3/d80a9fb3362fb91c2d06d70e321f4bc5/yp/full/ap1000_us0_pi409_s1639455288.mp3"
+          controls preload="metadata" loop></audio>
+        <audio src="https://music.163.com/song/media/outer/url?id=1827001911.mp3" controls preload="metadata"
+          loop></audio>
+        <audio src="https://music.163.com/song/media/outer/url?id=34324540.mp3" controls preload="metadata"
+          loop></audio>
+  </div>
+  <footer id="footerTag">
+    <div id="footer-wrap">
+      <p>电脑可使用空格或回车键敲击~</p>
+      <p>
+        访问量&nbsp;<span id="busuanzi_value_site_pv">null</span>&nbsp;次，访客数&nbsp;<span
+          id="busuanzi_value_site_uv">null</span>&nbsp;次
+      </p>
+      <p class="copyright">
+        <i class="fa fa-copyright"></i>&nbsp;<a href="https://saop.cc/" target="_blank">Asuna</a>
+      </p>
     </div>
-    <footer id="footerTag">
-      <div id="footer-wrap">
-        <p>电脑可使用空格或回车键敲击~</p>
-        <p>
-          访问量&nbsp;<span id="busuanzi_value_site_pv">null</span
-          >&nbsp;次，访客数&nbsp;<span id="busuanzi_value_site_uv">null</span
-          >&nbsp;次
-        </p>
-        <p class="copyright">
-          <i class="fa fa-copyright"></i>&nbsp;<a
-            href="https://saop.cc/"
-            target="_blank"
-            >Asuna</a
-          >
-        </p>
-      </div>
-    </footer>
-    <div id="mask"></div>
-    <script src="./js/audio.js"></script>
-    <script src="./js/main.js"></script>
-    <script
-      async
-      src="//cdn.staticfile.net/busuanzi/2.3.0/bsz.pure.mini.min.js"
-    ></script>
-  </body>
+  </footer>
+  <script src="https://registry.npmmirror.com/instant.page/latest/files/instantpage.js" type="module"></script>
+  <div id="mask"></div>
+  <script src="./js/audio.js" importance="high"></script>
+  <script src="./js/main.js" importance="high"></script>
+  <script async src="https://registry.npmmirror.com/js-asuna/latest/files/js/bsz.pure.mini.js"></script>
+</body>
+
 </html>
